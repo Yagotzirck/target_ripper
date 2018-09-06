@@ -3,7 +3,7 @@ An archive extractor tool for the Polish Windows game Target (1998).
 
 
 ## Usage
-Place the executable inside the game's "data" subfolder (the one with the .RPL files), then launch it; everything else is pretty straightforward.
+Place the executable inside the game's "data" subfolder (the one with the .RPL files), then launch it; everything else is pretty straightforward.  
 Once the extractor has done its thing, you should have the extracted resources in a subfolder named "Target rip",
 located inside the same "data" subfolder.
 
