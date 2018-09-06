@@ -1,6 +1,8 @@
 # target_ripper
 An archive extractor tool for the Polish Windows game Target (1998).
 
+Keep in mind that this has been tested with the English version only, there's no guarantee that it will work with any other version (namely the Polish one.)
+
 
 ## Usage
 Place the executable inside the game's "data" subfolder (the one with the .RPL files), then launch it; everything else is pretty straightforward.  
