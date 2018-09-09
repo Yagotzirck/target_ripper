@@ -93,31 +93,21 @@ void write_shrunk_tga_pal(FILE *stream){
 
 /* tga_compressData(): compress data(RLE encoding) but keep the palette intact */
 int tga_compressData(BYTE imgDest[], const BYTE imgBuf[], DWORD size){
-    BYTE used_indexes[256] = {0};
     unsigned int i = 0, j = 0;
 
-    union counter_u{
-        struct RLE_counter_s{
-            BYTE counter : 7;
-            BYTE highBit : 1;
-        }RLE_counter;
+    BYTE RLE_byte;
 
-        BYTE RLE_byte;
-    }counter;
-
-
-    counter.RLE_counter.highBit = 1;
     do{
-        counter.RLE_counter.counter = 0;
+        RLE_byte = 0;
         while(i + 1 < size && imgBuf[i+1] == imgBuf[i]){
-            ++counter.RLE_counter.counter;
+            ++RLE_byte;
             ++i;
 
-            if(counter.RLE_counter.counter == 127)
+            if(RLE_byte == 127)
                 break;
         }
 
-        imgDest[j++] =  counter.RLE_byte;
+        imgDest[j++] =  RLE_byte | 0x80;
         imgDest[j++] =  imgBuf[i++];
     }while(i < size);
 
