@@ -8,6 +8,7 @@
 #include "rip_data.h"
 #include "rip_post.h"
 #include "rip_md.h"
+#include "rip_tt.h"
 
 #define clear_stdin() while(getchar() != '\n')
 
